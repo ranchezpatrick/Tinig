@@ -1,0 +1,23 @@
+<h1> Artists </h1>
+
+<p> Artists Page </p>
+
+<table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Formed  </th>
+            <th> Verified </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+<tbody>
+ <% @artists.each do |artists| %>
+    <tr>
+        <td> <%= artists.name %> </td>
+        <td> <%= artists.formed_at %> </td>
+        <td> <%= artists.verified %> </td>
+    </tr>
+ <% end %>
+</tbody>
+</table>

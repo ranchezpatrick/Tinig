@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_132844) do
+ActiveRecord::Schema.define(version: 2021_11_19_135032) do
+
+  create_table "albums", force: :cascade do |t|
+    t.text "name"
+    t.boolean "released"
+    t.datetime "released_at"
+    t.text "cover_art_url"
+    t.time "length"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "artists", force: :cascade do |t|
     t.text "name"
@@ -21,6 +31,15 @@ ActiveRecord::Schema.define(version: 2021_11_19_132844) do
     t.datetime "formed_at"
     t.datetime "verified_at"
     t.boolean "verified"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.text "url"
+    t.text "name"
+    t.text "credits"
+    t.boolean "available"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
