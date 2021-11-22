@@ -17,12 +17,12 @@
     <br/>
 
     <%= f.label :avatar_url %>
-    <%= f.text_field :avatar_url %>
+    <%= f.text_field :avatr_url %>
 
     <br/>
 
     <%= f.label :formed_at %>
-    <%= f.date_field :matriculation_date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %> 
+    <%= f.date_field :formed_at, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %> 
     
     <br/>
 
@@ -32,7 +32,7 @@
     <br/>
 
     <%= f.label :verified_at %>
-    <%= f.date_field :matriculation_date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %> 
+    <%= f.date_field :verified_at, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %> 
     
     <br/>
 

@@ -9,6 +9,10 @@
             <th> Formed  </th>
             <th> Verified </th>
             <th> Verified At </th>
+            <th> Permalink </th>
+            <th> Bio </th>
+            <th> Avatar Url </th>
+            <th> Cover Photo Url </th>
             <th> Actions </th>
         </tr>
     </thead>
@@ -19,10 +23,23 @@
         <td> <%= artists.formed_at %> </td>
         <td> <%= artists.verified %> </td>
         <td> <%= artists.verified_at %> </td>
+        <td> <%= artists.permalink %> </td>
+        <td> <%= artists.bio.truncate(100) %> </td>
+        <td> <%= artists.avatr_url %> </td>
+        <td> <%= artists.cover_photo_url %> </td>
         <td> <%= link_to edit_artist_path(artists.id) do %>
             Edit 
         <% end %> </td>
     </tr>
  <% end %>
+#  <% link_to new_artist_path do %>
+#     New Artist
+# <% end %>
 </tbody>
 </table>
+
+<h1>
+<%= link_to new_artist_path do %>
+    New Artist
+<% end %>
+</h1>

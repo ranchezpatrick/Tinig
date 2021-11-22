@@ -5,6 +5,10 @@ class ArtistsController < ApplicationController
         @artists = Artist.all
     end
 
+    def new 
+        @artist = Artist.new
+    end
+
     def show
         @artists = Artist.find(params[:id])
     end
@@ -28,13 +32,12 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        artists_params = params.require(:artists).permit(:name, :verified, :verified_at, :permalink, :cover_photo_url, :avatr_url, :bio)
         @artists = Artist.new(artists_params)
 
         if @artists.save
             redirect_to @artists
         else
-            render :show
+            render :new
         end
     end
 
@@ -45,7 +48,7 @@ class ArtistsController < ApplicationController
     end
 
     def artists_params
-        params.require(:artist).permit(:name, :permalink, :bio, :formed_at, :verified, :verified_at, :avartar_url, :cover_photo_url)
+        params.require(:artist).permit(:name, :permalink, :bio, :formed_at, :verified, :verified_at, :avatr_url, :cover_photo_url)
     end
 
 end
