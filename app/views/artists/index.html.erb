@@ -27,9 +27,16 @@
         <td> <%= artists.bio.truncate(100) %> </td>
         <td> <%= artists.avatr_url %> </td>
         <td> <%= artists.cover_photo_url %> </td>
-        <td> <%= link_to edit_artist_path(artists.id) do %>
+        <td> 
+        <%= link_to edit_artist_path(artists.id) do %>
             Edit 
-        <% end %> </td>
+        <% end %> 
+
+        <%= link_to artist_path(artists.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
+            Delete
+        <% end %>
+
+        </td>
     </tr>
  <% end %>
 #  <% link_to new_artist_path do %>

@@ -26,10 +26,6 @@ class ArtistsController < ApplicationController
             render :edit
         end
     end
-    
-    def new 
-        @artists = Artist.new
-    end
 
     def create
         @artists = Artist.new(artists_params)
@@ -40,6 +36,11 @@ class ArtistsController < ApplicationController
             render :new
         end
     end
+    
+    def destroy
+        @artist.destroy
+        redirect_to artists_path, notice: "an Article was successfully destoyed"
+      end
 
     private
 
