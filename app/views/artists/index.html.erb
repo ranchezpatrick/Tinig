@@ -8,6 +8,7 @@
             <th> Name </th>
             <th> Formed  </th>
             <th> Verified </th>
+            <th> Verified At </th>
             <th> Actions </th>
         </tr>
     </thead>
@@ -17,6 +18,10 @@
         <td> <%= artists.name %> </td>
         <td> <%= artists.formed_at %> </td>
         <td> <%= artists.verified %> </td>
+        <td> <%= artists.verified_at %> </td>
+        <td> <%= link_to edit_artist_path(artists.id) do %>
+            Edit 
+        <% end %> </td>
     </tr>
  <% end %>
 </tbody>

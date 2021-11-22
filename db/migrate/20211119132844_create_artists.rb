@@ -8,7 +8,6 @@ class CreateArtists < ActiveRecord::Migration[6.1]
       t.text :bio
       t.text :avatr_url
       t.text :cover_photo_url
-      t.datetime :formed_at
       t.datetime :verified_at
 
       t.timestamps
