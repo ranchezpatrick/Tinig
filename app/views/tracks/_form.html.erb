@@ -1,0 +1,32 @@
+<%= form_with model: @track do |f| %>
+    
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <br/>
+
+    <%= f.label :url %>
+    <%= f.text_area :url %>
+
+
+    <br/>
+
+    <%= f.label :credits %>
+    <%= f.text_field :credits %>
+
+    <br/>
+
+    <%= f.label :avaliable %>
+    <%= f.check_box :available %>
+
+    <br/>
+
+    <%= f.submit %>
+
+    <%= link_to tracks_path do %>
+        Back to index
+    <% end %>
+
+
+<% end %>
+     

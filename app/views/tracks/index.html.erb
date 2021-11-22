@@ -1,0 +1,41 @@
+<h1> tracks </h1>
+
+<p> Tracks </p>
+
+<table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> URL </th>
+            <th> Available</th>
+            <th> Credits </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+<tbody>
+ <% @tracks.each do |tracks| %>
+    <tr>
+        <td> <%= tracks.name %> </td>
+        <td> <%= tracks.url %> </td>
+        <td> <%= tracks.available %> </td>
+        <td> <%= tracks.credits %> </td>
+        <td> 
+        <%= link_to edit_track_path(tracks.id) do %>
+            Edit 
+        <% end %> 
+
+        <%= link_to track_path(tracks.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
+            Delete
+        <% end %>
+
+        </td>
+    </tr>
+ <% end %>
+</tbody>
+</table>
+
+<h1>
+<%= link_to new_track_path do %>
+    New Track
+<% end %>
+</h1>

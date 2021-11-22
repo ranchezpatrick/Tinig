@@ -9,37 +9,38 @@ class ArtistsController < ApplicationController
         @artist = Artist.new
     end
 
+    def create
+        @artist = Artist.new(artists_params)
+
+        if @artist.save
+            redirect_to artists_path
+        else
+            render :new
+        end
+    end
+
     def show
-        @artists = Artist.find(params[:id])
+        @artist = Artist.find(params[:id])
     end
 
     def edit
-        @artists = Artist.find(params[:id])
+        @artist = Artist.find(params[:id])
     end
     
     def update
-        @artists = Artist.find(params[:id])
-        if @artists.update(artists_params)
+        @artist = Artist.find(params[:id])
+        
+        if @artist.update(artists_params)
         redirect_to artists_path, notice: "Updated an Entry"
         else
             flash[:error] = "Blank field"
             render :edit
         end
     end
-
-    def create
-        @artists = Artist.new(artists_params)
-
-        if @artists.save
-            redirect_to @artists
-        else
-            render :new
-        end
-    end
     
     def destroy
         @artist.destroy
-        redirect_to artists_path, notice: "an Article was successfully destoyed"
+        redirect_to root_path, notice: "an Article was successfully destoyed"
       end
 
     private
