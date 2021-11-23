@@ -5,8 +5,9 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
       t.boolean :released
       t.datetime :released_at
       t.text :cover_art_url
-      t.time :length
-      t.references :article, null: false, foreign_key: true
+      t.integer :length
+      
+      
 
       t.timestamps
     end

@@ -40,7 +40,7 @@ class TracksController < ApplicationController
 
     def destroy
         @track.destroy
-        redirect_to tracks_path, notice: "an Article was successfully destoyed"
+        redirect_to tracks_path, notice: "a Track was successfully destoyed"
       end
 
       private

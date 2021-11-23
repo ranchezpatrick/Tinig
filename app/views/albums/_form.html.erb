@@ -1,0 +1,43 @@
+<%= form_with model: @album do |f| %>
+    
+    <br/>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+
+    <br/>
+
+    <%= f.label :released %>
+    <%= f.check_box :released %>
+
+
+    <br/>
+
+    <%= f.label :released_at %>
+    <%= f.date_field :released_at, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %> 
+    
+    <br/>
+
+    <br/>
+    
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+   
+    
+    <br/>
+
+    <%= f.label :cover_art_url %>
+    <%= f.text_field :cover_art_url %>
+
+    <br/>
+
+    <%= f.submit %>
+
+    <%= link_to albums_path do %>
+        Back to index
+    <% end %>
+
+
+<% end %>
+     

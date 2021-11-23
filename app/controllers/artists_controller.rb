@@ -24,7 +24,6 @@ class ArtistsController < ApplicationController
     end
 
     def edit
-        @artist = Artist.find(params[:id])
     end
     
     def update
@@ -40,7 +39,7 @@ class ArtistsController < ApplicationController
     
     def destroy
         @artist.destroy
-        redirect_to root_path, notice: "an Article was successfully destoyed"
+        redirect_to root_path, notice: "an Artist was successfully destoyed"
       end
 
     private

@@ -1,0 +1,44 @@
+<h1> Albums </h1>
+
+<p> Albums Page </p>
+
+<table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Released </th>
+            <th> Released At </th>
+            <th> Length </th>
+            <th> Cover Art Url </th>
+        </tr>
+    </thead>
+<tbody>
+ <% @albums.each do |albums| %>
+    <tr>
+        <td> <%= albums.name %> </td>
+        <td> <%= albums.released %> </td>
+        <td> <%= albums.released_at %> </td>
+        <td> <%= albums.length %> </td>
+        <td> <%= albums.cover_art_url %> </td>
+        <td> 
+        <%= link_to edit_album_path(albums.id) do %>
+            Edit 
+        <% end %> 
+
+        <%= link_to album_path(albums.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
+            Delete
+        <% end %>
+
+        </td>
+    </tr>
+ <% end %>
+
+
+</tbody>
+</table>
+
+<h1>
+<%= link_to new_album_path do %>
+    New Album
+<% end %>
+</h1>
