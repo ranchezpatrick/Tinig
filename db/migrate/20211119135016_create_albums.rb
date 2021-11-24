@@ -6,6 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
       t.datetime :released_at
       t.text :cover_art_url
       t.integer :length
+      t.text :kind
       
       
 

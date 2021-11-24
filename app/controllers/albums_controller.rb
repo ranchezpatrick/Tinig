@@ -23,6 +23,7 @@ class AlbumsController < ApplicationController
     end
 
     def update
+
         if @album.update(albums_params)
             redirect_to albums_path, notice: "Updated and Entry"
         else
@@ -43,6 +44,6 @@ class AlbumsController < ApplicationController
     end
 
     def albums_params
-        params.require(:album).permit(:name, :released, :released_at, :length, :cover_art_url)
+        params.require(:album).permit(:name, :released, :released_at, :length, :cover_art_url, :kind)
     end
 end

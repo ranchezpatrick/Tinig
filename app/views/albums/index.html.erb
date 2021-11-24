@@ -10,6 +10,8 @@
             <th> Released At </th>
             <th> Length </th>
             <th> Cover Art Url </th>
+            <th> Kind </th>
+            <th> Actions </th>
         </tr>
     </thead>
 <tbody>
@@ -20,6 +22,7 @@
         <td> <%= albums.released_at %> </td>
         <td> <%= albums.length %> </td>
         <td> <%= albums.cover_art_url %> </td>
+        <td> <%= albums.kind %> </td>
         <td> 
         <%= link_to edit_album_path(albums.id) do %>
             Edit 

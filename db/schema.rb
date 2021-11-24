@@ -17,26 +17,27 @@ ActiveRecord::Schema.define(version: 2021_11_19_135032) do
     t.boolean "released"
     t.datetime "released_at"
     t.text "cover_art_url"
-    t.time "length"
+    t.integer "length"
+    t.text "kind"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "artists", force: :cascade do |t|
     t.text "name"
-    t.text "permalink"
-    t.text "bio"
-    t.text "avatr_url"
-    t.text "cover_photo_url"
     t.datetime "formed_at"
-    t.datetime "verified_at"
     t.boolean "verified"
+    t.string "permalink"
+    t.text "bio"
+    t.string "avatr_url"
+    t.string "cover_photo_url"
+    t.datetime "verified_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.text "url"
+    t.string "url"
     t.text "name"
     t.text "credits"
     t.boolean "available"
