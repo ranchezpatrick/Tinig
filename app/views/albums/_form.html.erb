@@ -1,5 +1,12 @@
 <%= form_with model: @album, html: {class: "mb-3"} do |f| %>
-    
+    <% if @album.errors.any?%>
+        <p>Following-errors-occured</>
+        <ul>
+            <% @album.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
     <br/>
 
     <%= f.label :name %>

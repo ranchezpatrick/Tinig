@@ -1,4 +1,13 @@
 <%= form_with model: @track do |f| %>
+    <% if @track.errors.any?%>
+    <p>Following-errors-occured</>
+    <ul>
+        <% @track.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
+    <% end %>
+
     
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control'  %>
