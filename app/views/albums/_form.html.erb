@@ -33,9 +33,8 @@
     <br/>
 
     <%= f.label :kind %>
-    <%= f.text_field :kind %>
-
-    <br/>
+    <%= f.select :kind, options_for_select(['EP', 'LP', 'Single']), {:required => "true"}, class: 'form-control' %>
+    
 
     <%= f.submit %>
 
