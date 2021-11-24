@@ -10,16 +10,12 @@ class TracksController < ApplicationController
     end
 
     def show
-        @track = Track.find(params[:id])
     end
 
     def edit
-        @track = Track.find(params[:id])
     end
 
     def update
-        @track = Track.find(params[:id])
-
         if @track.update(tracks_params)
         redirect_to tracks_path, notice: "Updated an Entry"
         else 

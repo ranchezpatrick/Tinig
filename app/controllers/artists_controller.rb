@@ -17,18 +17,16 @@ class ArtistsController < ApplicationController
         else
             render :new
         end
+
     end
 
     def show
-        @artist = Artist.find(params[:id])
     end
 
     def edit
     end
     
     def update
-        @artist = Artist.find(params[:id])
-        
         if @artist.update(artists_params)
         redirect_to artists_path, notice: "Updated an Entry"
         else

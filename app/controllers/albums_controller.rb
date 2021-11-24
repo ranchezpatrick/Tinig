@@ -20,12 +20,9 @@ class AlbumsController < ApplicationController
     end
 
     def edit
-        @album = Album.find(params[:id])
     end
 
     def update
-        @album = Album.find(params[:id])
-
         if @album.update(albums_params)
             redirect_to albums_path, notice: "Updated and Entry"
         else
