@@ -1,0 +1,50 @@
+<%= form_with model: @album, html: {class: "mb-3"} do |f| %>
+
+    <br/>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', disabled: true %>
+
+
+    <br/>
+
+    <%= f.label :released %>
+    <%= f.check_box :released, disabled: true %>
+
+
+    <br/>
+
+    <%= f.label :released_at %>
+    <%= f.date_field :released_at, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control', disabled: true%> 
+    
+    <br/>
+
+    <br/>
+    
+    <%= f.label :length %>
+    <%= f.text_field :length, class: 'form-control', disabled: true%>
+   
+    
+    <br/>
+
+    <%= f.label :cover_art_url %>
+    <%= f.text_field :cover_art_url, class: 'form-control', disabled: true %>
+
+    <br/>
+
+    <%= f.label :kind %>
+    <%= f.select :kind, options_for_select(['EP', 'LP', 'Single']), {:required => "true"}, class: 'form-control', disabled: true %>
+    
+    <br/>
+
+    <%= link_to edit_album_path(@album) do %>
+        <button type="button" class="btn btn-light"> Edit </button>
+    <% end %> 
+
+    <%= link_to albums_path do %>
+        <button type="button" class="btn btn-light"> Back </button>
+    <% end %>
+
+
+<% end %>
+     

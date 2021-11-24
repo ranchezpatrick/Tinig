@@ -1,0 +1,36 @@
+<%= form_with model: @track do |f| %>
+   
+
+    
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', disabled: true %>
+
+    <br/>
+
+    <%= f.label :url %>
+    <%= f.text_area :url, class: 'form-control', disabled: true  %>
+
+
+    <br/>
+
+    <%= f.label :credits %>
+    <%= f.text_field :credits, class: 'form-control', disabled: true  %>
+
+    <br/>
+
+    <%= f.label :avaliable %>
+    <%= f.check_box :available, disabled: true%>
+
+    <br/>
+
+    <%= link_to edit_track_path(tracks.id) do %>
+        <button type="button" class="btn btn-light"> Edit </button>
+    <% end %> 
+
+    <%= link_to tracks_path do %>
+        <button type="button" class="btn btn-light"> Back </button>
+    <% end %>
+
+
+<% end %>
+     

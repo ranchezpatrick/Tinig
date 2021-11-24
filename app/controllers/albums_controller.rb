@@ -22,6 +22,9 @@ class AlbumsController < ApplicationController
     def edit
     end
 
+    def show
+    end
+
     def update
 
         if @album.update(albums_params)

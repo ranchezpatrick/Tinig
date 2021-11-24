@@ -31,6 +31,12 @@
         <%= link_to album_path(albums.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
             <button type="button" class="btn btn-light"> Delete </button>
         <% end %>
+        
+        <%= link_to album_path(albums.id) do %>
+            <button type="button" class="btn btn-light"> Explore </button>
+            <% end %>
+        
+        
 
         </td>
     </tr>
