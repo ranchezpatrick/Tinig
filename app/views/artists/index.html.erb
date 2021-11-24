@@ -1,8 +1,8 @@
 <h1> Artists </h1>
 
-<p> Artists Page </p>
+<p> Your Favorite Artists </p>
 
-<table>
+<table class="table table-dark table-striped">
     <thead>
         <tr>
             <th> Name </th>
@@ -25,28 +25,27 @@
         <td> <%= artists.verified_at %> </td>
         <td> <%= artists.permalink %> </td>
         <td> <%= artists.bio.truncate(100) %> </td>
-        <td> <%= artists.avatr_url %> </td>
-        <td> <%= artists.cover_photo_url %> </td>
+        <td> <%= artists.avatr_url.truncate(50) %> </td>
+        <td> <%= artists.cover_photo_url.truncate(50)%> </td>
         <td> 
         <%= link_to edit_artist_path(artists.id) do %>
-            Edit 
+            <button type="button" class="btn btn-light"> Edit </button>
         <% end %> 
 
         <%= link_to artist_path(artists.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
-            Delete
+            <button type="button" class="btn btn-light"> Delete </button>
         <% end %>
 
         </td>
     </tr>
  <% end %>
-#  <% link_to new_artist_path do %>
-#     New Artist
-# <% end %>
+
+
 </tbody>
 </table>
 
 <h1>
 <%= link_to new_artist_path do %>
-    New Artist
+    <button type="button" class="btn btn-light"> New Artist </button>
 <% end %>
 </h1>

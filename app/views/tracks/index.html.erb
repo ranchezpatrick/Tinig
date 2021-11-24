@@ -1,8 +1,8 @@
-<h1> tracks </h1>
+<h1> Tracks </h1>
 
-<p> Tracks </p>
+<p> Your Favorite Tracks </p>
 
-<table>
+<table class="table table-dark table-striped">
     <thead>
         <tr>
             <th> Name </th>
@@ -16,16 +16,16 @@
  <% @tracks.each do |tracks| %>
     <tr>
         <td> <%= tracks.name %> </td>
-        <td> <%= tracks.url %> </td>
+        <td> <%= tracks.url.truncate(50) %> </td>
         <td> <%= tracks.available %> </td>
         <td> <%= tracks.credits %> </td>
         <td> 
         <%= link_to edit_track_path(tracks.id) do %>
-            Edit 
+            <button type="button" class="btn btn-light"> Edit </button>
         <% end %> 
 
         <%= link_to track_path(tracks.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
-            Delete
+            <button type="button" class="btn btn-light"> Delete </button>
         <% end %>
 
         </td>
@@ -34,8 +34,7 @@
 </tbody>
 </table>
 
-<h1>
+
 <%= link_to new_track_path do %>
-    New Track
+    <button type="button" class="btn btn-light"> New Track </button>
 <% end %>
-</h1>

@@ -1,8 +1,8 @@
 <h1> Albums </h1>
 
-<p> Albums Page </p>
+<p> Your Favorite Albums </p>
 
-<table>
+<table class="table table-dark table-striped">
     <thead>
         <tr>
             <th> Name </th>
@@ -21,15 +21,15 @@
         <td> <%= albums.released %> </td>
         <td> <%= albums.released_at %> </td>
         <td> <%= albums.length %> </td>
-        <td> <%= albums.cover_art_url %> </td>
+        <td> <%= albums.cover_art_url.truncate(50) %> </td>
         <td> <%= albums.kind %> </td>
         <td> 
         <%= link_to edit_album_path(albums.id) do %>
-            Edit 
+            <button type="button" class="btn btn-light"> Edit </button>
         <% end %> 
 
         <%= link_to album_path(albums.id), method: :delete, data: {confirm: "Are you sure about that?"} do %>
-            Delete
+            <button type="button" class="btn btn-light"> Delete </button>
         <% end %>
 
         </td>
@@ -40,8 +40,8 @@
 </tbody>
 </table>
 
-<h1>
+
+
 <%= link_to new_album_path do %>
-    New Album
+<button type="button" class="btn btn-light"> New Album</button>
 <% end %>
-</h1>

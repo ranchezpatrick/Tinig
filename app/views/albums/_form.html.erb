@@ -1,9 +1,9 @@
-<%= form_with model: @album do |f| %>
+<%= form_with model: @album, html: {class: "mb-3"} do |f| %>
     
     <br/>
 
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
 
 
     <br/>
@@ -22,24 +22,25 @@
     <br/>
     
     <%= f.label :length %>
-    <%= f.text_field :length %>
+    <%= f.text_field :length, class: 'form-control' %>
    
     
     <br/>
 
     <%= f.label :cover_art_url %>
-    <%= f.text_field :cover_art_url %>
+    <%= f.text_field :cover_art_url, class: 'form-control' %>
 
     <br/>
 
     <%= f.label :kind %>
     <%= f.select :kind, options_for_select(['EP', 'LP', 'Single']), {:required => "true"}, class: 'form-control' %>
     
+    <br/>
 
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-light" %>
 
     <%= link_to albums_path do %>
-        Back to index
+        <button type="button" class="btn btn-light"> Back </button>
     <% end %>
 
 

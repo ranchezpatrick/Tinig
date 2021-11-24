@@ -1,30 +1,30 @@
 <%= form_with model: @track do |f| %>
     
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control'  %>
 
     <br/>
 
     <%= f.label :url %>
-    <%= f.text_area :url %>
+    <%= f.text_area :url, class: 'form-control'  %>
 
 
     <br/>
 
     <%= f.label :credits %>
-    <%= f.text_field :credits %>
+    <%= f.text_field :credits, class: 'form-control'  %>
 
     <br/>
 
     <%= f.label :avaliable %>
-    <%= f.check_box :available %>
+    <%= f.check_box :available%>
 
     <br/>
 
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-light" %>
 
     <%= link_to tracks_path do %>
-        Back to index
+        <button type="button" class="btn btn-light"> Back </button>
     <% end %>
 
 

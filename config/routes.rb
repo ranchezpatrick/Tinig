@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 resources :artists, :tracks, :albums
 
 
-root 'artists#index'
+root 'pages#index'
 end
